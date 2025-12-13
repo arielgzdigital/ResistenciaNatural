@@ -1,0 +1,104 @@
+/* ===============================
+   SECCIÓN RESISTENCIA
+================================ */
+
+.resistencia-seccion {
+    width: 100%;
+    padding: 80px 20px;
+    background-color: var(--texto-primario);
+}
+
+.resistencia-contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Título principal */
+.resistencia-titulo {
+    font-size: 42px;
+    color: var(--color-primario);
+    text-align: center;
+}
+
+/* Subtítulo */
+.resistencia-subtitulo {
+    font-size: 20px;
+    color: var(--color-secundario);
+    text-align: center;
+    font-weight: 400;
+}
+
+/* Contenido */
+.resistencia-contenido {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.resistencia-contenido p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #3c3c3c;
+    text-wrap: pretty;
+}
+
+/* Destacado */
+.resistencia-contenido strong {
+    color: var(--color-primario);
+}
+
+/*-----*/
+.resistencia-titulo::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-primario);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.resistencia-seccion {
+    background: linear-gradient(
+        180deg,
+        var(--texto-primario) 0%,
+        #f7f7f7 100%
+    );
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+    .resistencia-titulo {
+        font-size: 34px;
+    }
+
+    .resistencia-subtitulo {
+        font-size: 18px;
+    }
+
+    .resistencia-contenido p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .resistencia-seccion {
+        padding: 60px 15px;
+    }
+
+    .resistencia-titulo {
+        font-size: 28px;
+    }
+
+    .resistencia-subtitulo {
+        font-size: 16px;
+    }
+}
+

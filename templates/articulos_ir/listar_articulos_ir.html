@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+    <!--
+    <div>
+        <div>
+        <h1>ARTICULOS DISPONIBLES</h1>
+		FILTRAR POR ARTICULOS:
+		{% for c in categorias_ir %}
+			<a href="{% url 'articulos_ir:path_filtrados_categoria_ir' c.pk %}"> {{c.titulo}} </a>
+		{% endfor %}
+		<br>
+        {% if user.is_staff %}
+        <a href="{% url 'articulos_ir:path_crear_articulos_ir' %}">CREAR ARTÍCULO</a>
+        {% endif %}
+        </div>
+        
+        {% for a in articulos_ir %}        
+            <ul style="display: inline-block;">
+                <a href="{% url 'articulos_ir:path_detalle_articulo_ir' a.pk %}">
+                <img src="{{ a.imagen.url }}" width="200">
+                </a>
+                <li>{{a.categoria_ir}}</li>
+                <li>{{a.titulo}}</li>
+                <li>{{a.descripcion}}</li>
+            
+            <li><a href="{% url 'articulos_ir:path_detalle_articulo_ir' a.pk %}">Detalle</a></li>
+            <li><a href="{% url 'articulos_ir:path_modificar_articulos_ir' a.pk %}">Actualizar</a></li>
+            <li><a href="{% url 'articulos_ir:path_eliminar_articulos_ir' a.pk %}">Eliminar</a></li>
+            </ul>         
+        {% endfor %}
+    </div>
+    -->
+
+    <main class="principal">
+        
+        <section class="presentacion-seccion" id="presentacion-seccion"></section>
+
+        <article class="articulo sobre_mi" id="sobre-mi">
+            <h2 class="articulo__titulo">¿Dónde ir?</h2>
+            <!--
+            <div>
+                <h2>FILTRAR POR ARTICULOS:</h2>
+                {% for c in categorias_ir %}
+                    <a href="{% url 'articulos_ir:path_filtrados_categoria_ir' c.pk %}"> {{c.titulo}} </a>
+                {% endfor %}
+                <br>
+                {% if user.is_staff %}
+                <a href="{% url 'articulos_ir:path_crear_articulos_ir' %}" class="btn-volver">Crear Artículo</a>
+                {% endif %}
+            </div>
+            -->
+
+            <div class="filtro-container">
+
+                <h2>Filtrar por Categorías</h2>
+
+                <form method="GET" action="" class="filtro-form">
+                    <select name="categoria" class="filtro-select" onchange="location.href=this.value;">
+                        
+                        <!-- TODAS -->
+                        <option value="{% url 'articulos_ir:path_listar_articulos_ir' %}"
+                            {% if not categoria_activa %}
+                                selected
+                            {% endif %}
+                        >
+                            Todas las categorías
+                        </option>
+
+                        {% for c in categorias_ir %}
+                            <option value="{% url 'articulos_ir:path_filtrados_categoria_ir' c.pk %}"
+                                {% if categoria_activa and categoria_activa.pk == c.pk %}
+                                    selected
+                                {% endif %}
+                            >
+                                {{ c.titulo }}
+                            </option>
+                        {% endfor %}
+
+                    </select>
+                </form>
+
+                <!-- BOTÓN BORRAR FILTRO -->
+                {% if categoria_activa %}
+                    <a href="{% url 'articulos_ir:path_listar_articulos_ir' %}" class="btn-borrar-filtro">
+                        Borrar filtro
+                    </a>
+                {% endif %}
+
+                {% if user.is_staff %}
+                    <a href="{% url 'articulos_ir:path_crear_articulos_ir' %}" class="btn-crear">
+                        Crear Artículo
+                    </a>
+                {% endif %}
+            </div>
+
+            <span class="tarjeta__divisor"></span>
+
+            <div class="contenedor_tarjetas_grid">
+            {% for a in articulos_ir %}     
+                <section class="seccion_descripcion">
+                    <div class="seccion_descripcion__porta_retrato">
+                        <a href="{% url 'articulos_ir:path_detalle_articulo_ir' a.pk %}" class="link-titulo">
+                        <img class="seccion_descripcion__imagen" src="{{ a.imagen.url }}"
+                            alt="{{a.titulo}}" title="{{a.titulo}}" />
+                        </a>
+                    </div>
+                    <div class="seccion_descripcion__info scroll scroll_fino scroll_gris"
+                        aria-label="descripcion personal">
+                        <h4 class="seccion_categoria__titulo">{{a.categoria_ir}}</h4>
+                        <a href="{% url 'articulos_ir:path_detalle_articulo_ir' a.pk %}" class="link-titulo">
+                        <h3 class="seccion_descripcion__titulo" id="detalle_articulo">
+                            {{a.titulo}}
+                        </h3>
+                        </a>        
+                    <p class="seccion_descripcion__parrafo" aria-label="Detalles del articulo"
+                            aria-describedby="detalle_articulo">
+                            {{ a.descripcion|truncatewords:20 }}
+                            </p>
+                    <a href="{% url 'articulos_ir:path_detalle_articulo_ir' a.pk %}" 
+						    class="btn-volver">Ver +</a>
+                    </div>
+                    {% if user.is_staff or user == a.usuario %}
+                    <div>                      
+                        <a href="{% url 'articulos_ir:path_eliminar_articulos_ir' a.pk %}" 
+							class="btn-delete-coment">Eliminar</a>
+                        <a href="{% url 'articulos_ir:path_modificar_articulos_ir' a.pk %}" 
+						    class="btn-volver">Modificar</a>					
+                    </div>
+                    {% endif %}
+                </section>
+            {% endfor %}
+            </div>
+
+        </article>
+
+    </main>
+
+{% endblock contenido %}

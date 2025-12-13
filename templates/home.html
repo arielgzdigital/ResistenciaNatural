@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+    <main class="principal">
+        <section class="presentacion" id="presentacion">
+
+            <div class="container-carousel">
+
+                <div class="carruseles" id="slider">
+                    <section class="slider-section">
+                        <img src="{% static 'img/carrusel/carrusel-01.png' %}">
+                    </section>
+                    <section class="slider-section">
+                        <img src="{% static 'img/carrusel/carrusel-02.png' %}">
+                    </section>
+                    <section class="slider-section">
+                        <img src="{% static 'img/carrusel/carrusel-03.png' %}">
+                    </section>
+                    <section class="slider-section">
+                        <img src="{% static 'img/carrusel/carrusel-04.png' %}">
+                    </section>
+                </div>
+
+                <div class="presentacion__contenedor_info">
+                    <h1 class="presentacion__titulo">Hola {{user.username}}</h1>
+                        <p class="presentacion__parrafo">
+                            Respirá naturaleza, viví cultura, descubrí Resistencia.
+                        </p>
+                    <div class="presentacion__contenedor_botones">
+                        <a href="#nosotros" class="boton boton_oscuro" role="button">Más Info +</a>
+                        <a href="#" class="boton" role="button">Contactanos</a>
+                    </div>
+                </div>
+                
+                <div class="btn-left"><i class='bx bx-chevron-left'></i></div>
+                <div class="btn-right"><i class='bx bx-chevron-right'></i></div>
+            </div>
+
+        </section>
+
+        <article class="articulo proyectos" id="proyectos">
+            <h2 class="articulo__titulo">Disfrutá de los espacios que enamoran a cada visitante.</h2>
+            <div class="contenedor_tarjetas_grid_nosotros">
+                <article class="tarjeta" aria-label="presentacion de proyecto personal">
+                    <img class="tarjeta__imagen" src="{% static 'img/categorias/donde-ir.png' %}" alt="imagen del proyecto"
+                        title="proyecto 1" />
+                    <div class="tarjeta__contenido">
+                        
+                        <h3 class="tarjeta__titulo" id="titulo_proyecto_1">¿Dónde Ir?</h3>
+                        <a href="{% url 'articulos_ir:path_listar_articulos_ir' %}" class="boton boton_oscuro" target="">Ver Destinos +</a>
+                    </div>
+                </article>
+                
+                <article class="tarjeta" aria-label="presentacion de proyecto personal">
+                    <img class="tarjeta__imagen" src="{% static 'img/categorias/postales-ciudad.png' %}"
+                        alt="imagen del proyecto" title="proyecto 2" />
+                    <div class="tarjeta__contenido">
+                        <h3 class="tarjeta__titulo" id="titulo_proyecto_2">Postales</h3>
+                        <a href="#galeria" class="boton boton_oscuro" target="">Ver +</a>
+                    </div>
+                </article>
+                
+            </div>
+        </article>
+
+        <article class="articulo sobre_nosotros" id="nosotros">
+            <h2 class="articulo__titulo">Una ciudad donde la naturaleza, el arte y la cultura se encuentran en cada rincón.</h2>
+
+            <div class="contenedor_tarjetas_grid_nosotros">
+
+                <section class="seccion_descripcion">
+                    <div class="seccion_descripcion__porta_retrato">
+                        <a href="{% url 'path_nosotros' %}">
+                        <img class="seccion_descripcion__imagen" src="{% static 'img/logos/logo-resistencia-natural-blanco.png' %}"
+                            alt="Foto Resistencia Natural" title="Nosotros" />
+                        </a>
+                    </div>
+                   
+                    <div class="seccion_descripcion__info scroll scroll_fino scroll_gris"
+                        aria-label="descripcion personal">
+                        <a href="{% url 'path_nosotros' %}" class="link-titulo">
+                        <h3 class="seccion_descripcion__titulo" id="nosotros">
+                            Nosotros
+                        </h3>
+                        </a>
+                        <p class="seccion_descripcion__parrafo" aria-label="Detalles de Nosotros"
+                            aria-describedby="nosotros">
+                            Desde mis primeros pasos en el mundo digital descubrí en el desarrollo web un espacio donde
+                            podía unir creatividad, lógica y soluciones prácticas. Comencé aprendiendo lo esencial...
+                        </p>
+                    </div>
+                 
+                </section>
+                <section class="seccion_descripcion">
+                    <div class="seccion_descripcion__porta_retrato">
+                        <a href="{% url 'path_resistencia' %}">
+                        <img class="seccion_descripcion__imagen" src="{% static 'img/logos/mpa-resistencia.png' %}"
+                            alt="Foto Resistencia" title="Resistencia" />
+                        </a>
+                    </div>
+                    <div class="seccion_descripcion__info scroll scroll_fino scroll_gris"
+                        aria-label="descripcion personal">
+                        <a href="{% url 'path_resistencia' %}" class="link-titulo">
+                        <h3 class="seccion_descripcion__titulo" id="resistencia">
+                            Resistencia
+                        </h3>
+                        </a>
+                        <p class="seccion_descripcion__parrafo" aria-label="Detalles de Resistencia"
+                            aria-describedby="resistencia">
+                            Desde mis primeros pasos en el mundo digital descubrí en el desarrollo web un espacio donde
+                            podía unir creatividad, lógica y soluciones prácticas. Comencé aprendiendo lo esencial...
+                        </p>                        
+                    </div>
+                </section>
+            
+            </div>
+
+        </article>
+
+        <article class="articulo galeria" id="galeria">
+            <h2 class="articulo__titulo">Postales de la Ciudad</h2>
+                    
+                    <section class="container">
+                        <div class="gallery">
+                            <a href="{% static 'img/galeria/1.png' %}" data-lightbox = "models"" data-title="Descripción 1"="">
+                                <img src="{% static 'img/galeria/1.png' %}">
+                            </a>
+                            <a href="{% static 'img/galeria/2.png' %}" data-lightbox = "models"" data-title="Descripción 2"="">
+                                <img src="{% static 'img/galeria/2.png' %}">
+                            </a>
+                            <a href="{% static 'img/galeria/3.png' %}" data-lightbox = "models"" data-title="Descripción 3"="">
+                                <img src="{% static 'img/galeria/3.png' %}">
+                            </a>
+                            <a href="{% static 'img/galeria/4.png' %}" data-lightbox = "models"" data-title="Descripción 4"="">
+                                <img src="{% static 'img/galeria/4.png' %}">
+                            </a>
+                            <a href="{% static 'img/galeria/5.png' %}" data-lightbox = "models"" data-title="Descripción 5"="">
+                                <img src="{% static 'img/galeria/5.png' %}">
+                            </a>
+                            <a href="{% static 'img/galeria/6.png' %}" data-lightbox = "models"" data-title="Descripción 6"="">
+                                <img src="{% static 'img/galeria/6.png' %}">
+                            </a>
+                            <a href="{% static 'img/galeria/7.png' %}" data-lightbox = "models"" data-title="Descripción 7"="">
+                                <img src="{% static 'img/galeria/7.png' %}">
+                            </a>
+                            <a href="{% static 'img/galeria/8.png' %}" data-lightbox = "models"" data-title="Descripción 8"="">
+                                <img src="{% static 'img/galeria/8.png' %}">
+                            </a> 
+                            <a href="{% static 'img/galeria/9.png' %}" data-lightbox = "models"" data-title="Descripción 9"="">
+                                <img src="{% static 'img/galeria/9.png' %}">
+                            </a>                          
+                        </div>
+                    </section>
+            
+        </article>
+
+    </main>
+{% endblock contenido %}

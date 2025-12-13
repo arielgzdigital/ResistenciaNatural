@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+
+	<main class="principal">
+        
+        <section class="presentacion-seccion" id="presentacion-seccion"></section>                  
+
+        	<div class="detalle-container">
+
+				<div class="detalle-card">
+					
+					<h1 class="titulo-articulo">{{ articulo_ir.titulo }}</h1>
+
+					<div class="detalle-contenido">
+
+						<div class="detalle-img">
+							<img src="{{ articulo_ir.imagen.url }}" alt="{{ articulo_ir.titulo }}">
+						</div>
+
+						<div class="detalle-info">
+							<a href="{% url 'articulos_ir:path_listar_articulos_ir' %}" 
+									class="btn-volver">¿Dónde Ir?</a>
+							<p></p>
+							<p><strong>Categoría:</strong> {{ articulo_ir.categoria_ir }}</p>
+							<p><strong>Título:</strong> {{ articulo_ir.titulo }}</p>
+							<p class="descripcion">{{ articulo_ir.descripcion }}</p>
+						</div>
+
+					</div>
+
+					<hr>
+
+					<!-- Comentarios -->
+					<div class="comentarios-box">
+						<h3>Comentarios</h3>
+
+						{% for a in articulo_ir.misComentarios %}
+							<div class="comentario-item">
+								<p class="comentario-texto">{{ a.texto }}</p>
+								<p class="comentario-meta">
+									Por <span>{{ a.usuario }}</span> — {{ a.creado|date:"d/m/Y H:i" }}
+								</p>
+
+								{% if user.is_staff or user == a.usuario %}
+									<a href="{% url 'comentarios:path_eliminar_comentario' a.pk %}" 
+									class="btn-delete-coment">Eliminar</a>
+								{% endif %}
+							</div>
+						{% empty %}
+							<p class="no-comentarios">No hay comentarios aún.</p>
+						{% endfor %}
+					</div>
+
+					<hr>
+
+					<!-- Formulario para comentar -->
+					<div class="form-comentarios">
+						<h3>Agregar Comentario</h3>
+
+						<form method="POST" action="{% url 'comentarios:path_comentar' articulo_ir.pk %}">
+							{% csrf_token %}
+							<textarea name="texto_comentado" required></textarea>
+							<button type="submit" class="btn-comentar">Comentar</button>
+						</form>
+					</div>
+
+				</div>
+
+			</div>
+
+    </main>
+
+{% endblock contenido %}

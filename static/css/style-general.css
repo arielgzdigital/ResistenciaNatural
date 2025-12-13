@@ -1,0 +1,24 @@
+:root {
+  /* colors */
+  --texto-primario: #dddddd;
+  --texto-secundario: #c5c5c5;
+  --fondo-primario: #000000;
+  --fondo-primario-transparente: #0f092180;
+  --fondo-secundario: #0a0c13;
+  --color-primario: #0b6640;
+  --color-primario-apagado: #04311e;
+  --color-secundario: #059c5d;
+  --color-terciario: #a8cf45;
+
+  /* sizes */
+  --presentacion-titulo-tamanio: 4rem;
+  --presentacion-titulo-tamanio-grande: 3.4rem;
+  --presentacion-descripcion-tamanio: 2.1rem;
+  --titulo-tamanio: 3rem;
+  --sub-titulo-tamanio: 2rem;
+  --texto-tamanio: 1.1rem;
+  --enlaces-tamanio: 1.2rem;
+  --texto-peso-grueso: 700;
+  --texto-peso-regular: 400;
+  --texto-peso-fino: 300;
+}

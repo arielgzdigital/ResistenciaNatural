@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+	<div>
+		<div>
+		<h1>CATEGORIAS</h1>
+		</div>
+		{% for c in categorias_ir %}
+			<div style="display: inline-block;">
+				<h4>{{c.titulo}}</h4>
+				<a href="{% url 'articulos_ir:path_filtrados_categoria_ir' c.pk %}">	
+					<img src="{{c.imagen.url}}" width="300">
+				</a>
+			</div>
+		{% endfor %}
+
+	</div>	
+{% endblock contenido %}

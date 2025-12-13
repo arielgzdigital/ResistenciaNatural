@@ -1,0 +1,278 @@
+/* Fondo general */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e7f5f;;
+    padding: 20px;
+}
+
+/* Tarjeta */
+.login-card {
+    background: rgba(255, 255, 255, 0.94);
+    padding: 40px;
+    margin: 60px 0 0 0;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    backdrop-filter: blur(4px);
+}
+
+.login-card h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #1e7f5f;
+}
+
+/* Campos de Django form.as_p */
+.login-card form p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.login-card form a {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.login-card label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+.login-card input {
+    color: #555;
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.login-card input:focus {
+    border-color: #1e7f5f;
+    box-shadow: 0 0 6px rgba(30,127,95,0.3);
+}
+
+.login-card textarea {
+    color: #555;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.login-card select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    background-color: #fafafa;
+    color: #555;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.login-card option {
+    color: #555;
+}
+
+/* Helptext: reglas de contraseña, instrucciones, etc */
+
+.login-card ul li {
+    font-size: 11px !important;
+    color: #555 !important;
+    margin-top: 5px !important;
+}
+
+.login-card .helptext {
+    font-size: 13px !important;
+    color: #555 !important;
+}
+
+.login-card .helptext ul {
+    padding-left: 18px;
+}
+
+/* Botón */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background: #1e7f5f;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background: #145a42;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 25px;
+    }
+}
+
+/* Eliminar*/
+.btn-delete {
+    width: 100%;
+    padding: 12px;
+    background: #d9534f; /* rojo elegante */
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background: #c9302c;
+}
+
+.btn-cancel {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background: #28a745; /* mismo verde utilizado */
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-cancel:hover {
+    background: #218838;
+}
+
+.login-card p {
+    color: #444;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ==========================
+   CONTENEDOR FILTRO
+========================== */
+.filtro-container {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ==========================
+   TÍTULO
+========================== */
+.filtro-container h2 {
+    text-align: center;
+    color: #333;
+    font-size: 22px;
+}
+
+/* ==========================
+   FORM / SELECT
+========================== */
+.filtro-form {
+    width: 100%;
+}
+
+.filtro-select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    background-color: #fafafa;
+    color: #555;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.filtro-select:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+.filtro-form option {
+    color: #555;
+}
+
+/* ==========================
+   BOTÓN BORRAR FILTRO (ROJO)
+========================== */
+.btn-borrar-filtro {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 8px;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-borrar-filtro:hover {
+    background-color: #b52a37;
+}
+
+/* ==========================
+   BOTÓN CREAR (VERDE)
+========================== */
+.btn-crear {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-crear:hover {
+    background-color: #218838;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 480px) {
+    .filtro-container {
+        padding: 20px;
+    }
+
+    .filtro-container h2 {
+        font-size: 20px;
+    }
+}

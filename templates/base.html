@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resistencia Natural</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style-general.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style-menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style-carrusel.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style-galeria.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lightbox.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style-login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style-nosotros.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style-resistencia.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style-contacto.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/detalle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
+</head>
+
+<body>    
+
+    <header class="encabezado" id="Header">
+        <img src="{% static 'img/logos/logo-resistencia-natural.png' %}" class="logo" alt="">
+        <input type="checkbox" id="menu" />
+        <label for="menu">
+            <img src="{% static 'img/menu.png' %}" class="menu-icono" alt="">
+        </label>
+        <ul class="menu">
+
+            <li class="item">
+                <a href="{% url 'path_home' %}"
+                class="item-enlace {% if request.resolver_match.url_name == 'path_home' %}active{% endif %}">
+                    Inicio
+                </a>
+            </li>
+
+            <li class="item">
+                <a href="{% url 'articulos_ir:path_listar_articulos_ir' %}"
+                class="item-enlace {% if request.resolver_match.app_name == 'articulos_ir' %}active{% endif %}">
+                    ¿Dónde Ir?
+                </a>
+            </li>
+            <li class="item">
+                <a href="{% url 'path_resistencia' %}"
+                class="item-enlace {% if request.resolver_match.url_name == 'path_resistencia' %}active{% endif %}">
+                    Resistencia
+                </a>
+            </li>
+            <li class="item">
+                <a href="{% url 'path_nosotros' %}"
+                class="item-enlace {% if request.resolver_match.url_name == 'path_nosotros' %}active{% endif %}">
+                    Nosotros
+                </a>
+            </li>
+            <li class="item">
+                <a href="{% url 'path_contacto' %}"
+                class="item-enlace {% if request.resolver_match.url_name == 'path_contacto' %}active{% endif %}">
+                    Contacto
+                </a>
+            </li>
+        {% if user.is_authenticated %}
+                    Hola, {{user.username}}
+            <li class="item">
+                <form method="POST" action="{% url 'usuarios:path_logout' %}">{% csrf_token %}
+                    <button class="btn" type="submit">Cerrar Seción</button>
+                </form>
+            </li>
+            {% else %}
+            <li class="btn-item">
+                <a href="{% url 'usuarios:path_login' %}" class="btn" role="button">Ingresar</a>
+            </li>
+            <li class="btn-item">
+                <a href="{% url 'usuarios:path_registro' %}" class="btn" role="button">Registrarse</a>
+            </li>
+            {% endif %}
+        </ul>
+    </header>
+
+    {% block contenido %}
+
+    {% endblock contenido %}
+
+    <footer class="pie_de_pagina" role="contentinfo">
+        <div class="pie_de_pagina__columna">
+            <h4 class="pie_de_pagina__titulo_columna">Nuestras Redes</h4>
+            <ul class="enlaces enlaces_redes">
+                <li class="enlaces__item">
+                    <a class="enlaces__enlace enlaces__enlace_footer" href="https://www.facebook.com"
+                        target="_blank"><img class="enlaces__icono" src="{% static 'img/logos/facebook-logo.png' %}"
+                            alt="logo de github" title="github" /></a>
+                </li>
+                <li class="enlaces__item">
+                    <a class="enlaces__enlace enlaces__enlace_footer" href="https://www.instagram.com" target="_blank">
+                        <img class="enlaces__icono" src="{% static 'img/logos/ig-logo.png' %}" alt="logo de instagram"
+                            title="instagram" />
+                    </a>
+                </li>
+                <li class="enlaces__item">
+                    <a class="enlaces__enlace enlaces__enlace_footer" href="https://twitter.com" target="_blank"><img
+                            class="enlaces__icono" src="{% static 'img/logos/x-logo.png' %}" alt="logo de X"
+                            title="X" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="pie_de_pagina__columna">
+            <h4 class="pie_de_pagina__titulo_columna">Contactame</h4>
+            <ul class="enlaces enlaces_vertical">
+                <li class="enlaces__item">
+                    <a class="enlaces__enlace enlaces__enlace_footer" href="mailto:mail@mail.com" target="_blank">Mail:
+                        resistencia.natural@mail.com</a>
+                    <a class="enlaces__enlace enlaces__enlace_footer" href="https://wa.me/5493624613155?text=Hola%20quiero%20más%20información%20sobre%20Resistencia%20Natural" target="_blank">
+                        Whatsapp: Enviar mensaje</a>
+                </li>
+            </ul>
+        </div>
+        <div class="pie_de_pagina__columna" role="navigation">
+            <h4 class="pie_de_pagina__titulo_columna">Secciones</h4>
+            <ul class="enlaces enlaces_vertical">
+                <li class="enlaces__item">
+                    <a class="enlaces__enlace enlaces__enlace_footer" href="{% url 'path_home' %}">Inicio</a>
+                </li>
+                <li class="enlaces__item">
+                    <a class="enlaces__enlace enlaces__enlace_footer" href="{% url 'articulos_ir:path_listar_articulos_ir' %}">¿Dónde Ir?</a>
+                </li>
+                <li class="enlaces__item">
+                    <a class="enlaces__enlace enlaces__enlace_footer" href="{% url 'path_resistencia' %}">Resistencia</a>
+                </li>
+                <li class="enlaces__item">
+                    <a class="enlaces__enlace enlaces__enlace_footer" href="#">Nosotros</a>
+                </li>
+                <li class="enlaces__item">
+                    <a class="enlaces__enlace enlaces__enlace_footer" href="{% url 'path_contacto' %}">contacto</a>
+                </li>
+            </ul>
+        </div>
+        <div class="pie_de_pagina__copyright">
+            <p>©️Copyright 2025 | Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="{% static 'js/script-carrusel.js' %}"></script>
+    <script src="{% static 'js/lightbox-plus-jquery.js' %}"></script>
+
+</body>
+</html>

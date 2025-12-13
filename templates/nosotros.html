@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<main class="principal">
+        
+    <section class="presentacion-seccion" id="presentacion-seccion"></section>
+
+        <article class="articulo" >   
+        
+        <section class="nosotros">
+            <div class="nosotros-container">
+
+                <h2 class="nosotros-titulo">Nosotros</h2>
+
+                <p class="nosotros-intro">
+                    Resistencia Natural es un proyecto desarrollado en el marco del
+                    <strong>Informatorio Chaco 2025</strong>, orientado a difundir y promover
+                    las propuestas turísticas, culturales y recreativas de la ciudad de Resistencia.
+                </p>
+
+                <div class="nosotros-card">
+                    <h3>El Proyecto</h3>
+                    <p>
+                        <strong>Resistencia Natural</strong> es una plataforma web pensada para
+                        mostrar la identidad de la ciudad a través de su naturaleza, su cultura,
+                        sus espacios al aire libre y su vida urbana.
+                    </p>
+                    <p>
+                        El nombre del proyecto hace referencia a lo verde de Resistencia, su flora,
+                        fauna y la convivencia entre ciudad y naturaleza, invitando tanto a
+                        residentes como a visitantes a descubrirla y disfrutarla.
+                    </p>
+                </div>
+
+                <div class="nosotros-card">
+                    <h3>Secciones del sitio</h3>
+                    <ul class="nosotros-lista">
+                        <li><strong>Inicio:</strong> enlaces principales y galería de postales de la ciudad.</li>
+                        <li><strong>¿Dónde ir?:</strong> artículos filtrados por categorías como Aire Libre,
+                            Puntos de Interés, Gastronomía y Alojamiento.</li>
+                        <li><strong>Resistencia:</strong> información relevante sobre la ciudad y su historia.</li>
+                        <li><strong>Nosotros:</strong> presentación del proyecto y del equipo.</li>
+                        <li><strong>Contacto:</strong> mapa, dirección, WhatsApp, email y redes sociales.</li>
+                    </ul>
+                </div>
+
+                <!-- Aquí agregamos la imagen con fondo blanco -->
+                <div class="nosotros-imagen-container">
+                    <img src="{% static 'img/logos/logo-resistencia-natural-blanco.png' %}" alt="Resistencia Natural" class="nosotros-imagen" />
+                </div>
+
+                <div class="nosotros-card">
+                    <h3>Participación de usuarios</h3>
+                    <p>
+                        El sitio permite registrarse para convertirse en usuario activo, pudiendo
+                        visualizar y comentar los artículos publicados, fomentando la participación
+                        y el intercambio de opiniones.
+                    </p>
+                </div>
+
+                <div class="nosotros-card equipo">
+                    <h3>Equipo de trabajo</h3>
+
+                    <p class="equipo-info">
+                        <strong>Informatorio Chaco 2025</strong><br>
+                        Comisión 4 — Grupo 2
+                    </p>
+
+                    <ul class="equipo-lista">
+                        <li>Ariel González</li>
+                        <li>Cristian Gabriel Bois</li>
+                        <li>Franco César Ruiz Díaz</li>
+                        <li>Romina Araceli Ruíz</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>    
+      
+        </article>
+
+    </section>
+</main>
+
+{% endblock contenido %}

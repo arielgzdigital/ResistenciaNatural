@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+	<div class="login-container">
+		<div class="login-card">
+			<h2>Eliminar Artículo</h2>
+
+			<form method="POST">
+				<p>¿Estás seguro que desea eliminar: "{{ articulo_ir }}"?</p>
+				{% csrf_token %}
+				{{ form }}
+
+				<button type="submit" class="btn-delete">Confirmar</button>
+				<button type="button" onclick="window.history.back();" class="btn-cancel">Cancelar</button>
+				<!--<a href="{% url 'articulos_ir:path_listar_articulos_ir' %}" class="btn-cancel">Cancelar</a>-->
+			</form>
+		</div>
+	</div>
+
+{% endblock contenido %}

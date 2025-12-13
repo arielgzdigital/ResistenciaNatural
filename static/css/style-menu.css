@@ -1,0 +1,153 @@
+*{
+    list-style: none;
+    box-sizing: border-box;
+}
+ 
+body {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /*
+    background-image: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)),
+        url(images/carrusel/carrusel-01.png);
+    */
+    background-position: center center;
+    background-repeat: no-repeat;
+    block-size: cover;
+}
+
+.encabezado {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 75px;
+    z-index: 100;
+}
+
+.logo {
+    height: 60px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #F2F2F2;
+}
+
+.item-enlace {
+  font-size: 14px;
+  font-weight: var(--texto-peso-grueso);
+  color: var(--texto-primario);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.item-enlace:hover,
+.item-enlace:focus {
+  color: var(--color-secundario);
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+label {
+    cursor: pointer;
+    display: none;
+}
+
+.btn-item {
+    margin: 0 5px 0 5px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #F2F2F2;
+}
+
+.btn {
+    border: none;
+    font-size: 14px;
+    padding:  10px 24px;
+    border-radius: 5px;
+    background-color: var(--color-secundario);
+    color: #F2F2F2;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover, 
+.btn:focus {
+    background-color: var(--texto-primario);
+    color: var(--color-secundario);
+}
+
+/* ACTIVAR BOTON*/
+.item-enlace.active {
+    color: #30c453; /* verde del proyecto */
+    font-weight: bold;
+}
+
+.item-enlace:hover {
+    color: #28a745;
+}
+
+
+@media(max-width:1200px) {
+    .menu {
+        padding: 30px;
+        margin: 0;
+    }
+
+    label {
+        display: initial;
+    }
+
+    .menu {
+        height: 100vh;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: rgba(3, 36, 22, 94%);
+        display: none;
+        text-align: center;
+    }
+
+    .item {
+        margin: 0 0 20px 0;
+        width: 100%;
+    }
+
+    .btn-item {
+    margin: 25px 0 35px 0;
+    }
+
+    .btn {
+       width: 100%;
+    }
+
+    #menu:checked ~ .menu {
+        display: initial;
+    }
+}

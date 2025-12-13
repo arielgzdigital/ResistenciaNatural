@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+
+<main class="principal">
+        
+    <section class="presentacion-seccion" id="presentacion-seccion"></section>
+
+        <article class="articulo" >
+            
+        <section class="resistencia-seccion">
+
+            <div class="resistencia-contenedor">
+
+                <h2 class="resistencia-titulo">
+                    Resistencia, Chaco
+                </h2>
+
+                <h3 class="resistencia-subtitulo">
+                    Ciudad de las Esculturas y Capital Cultural del Nordeste Argentino
+                </h3>
+
+                <div class="resistencia-contenido">
+
+                    <p>
+                        Resistencia es la capital de la provincia del Chaco, situada en el noreste de la Argentina,
+                        en el sudeste de la provincia sobre las riberas del arroyo Negro, afluente del río Paraná.
+                        Es el centro político, económico y cultural de la región.
+                    </p>
+
+                    <p>
+                        Fundada oficialmente el 27 de enero de 1878 por familias italianas provenientes del Friuli,
+                        Resistencia se consolidó como capital del Territorio Nacional del Chaco y, desde 1951,
+                        como capital de la provincia. Antes de la llegada de los colonos europeos, la región estuvo
+                        habitada por pueblos originarios guaycurúes, como los tobas, que resistieron la colonización
+                        durante décadas.
+                    </p>
+
+                    <p>
+                        La ciudad se destaca por su fuerte identidad cultural y artística. Conocida nacional e
+                        internacionalmente como la <strong>“Ciudad de las Esculturas”</strong>, ofrece un recorrido
+                        por más de 600 obras de arte distribuidas en calles, plazas y espacios públicos, muchas de ellas
+                        resultado de la Bienal Internacional de Escultura.
+                    </p>
+
+                    <p>
+                        Resistencia alberga museos, centros culturales y espacios históricos que reflejan tanto la
+                        historia regional como su diversidad cultural. La oferta turística se complementa con una
+                        variada propuesta gastronómica, ferias de artesanías y espacios verdes, invitando al visitante
+                        a disfrutar de la cultura, el arte y la vida urbana chaqueña.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        </article>
+
+        <article class="articulo galeria" id="galeria">
+            <h2 class="articulo__titulo">Postales de la Ciudad</h2>
+                    
+                    <section class="container">
+                        <div class="gallery">
+                            <a href="{% static 'img/galeria/1.png' %}" data-lightbox = "models"" data-title="Descripción 1"="">
+                                <img src="{% static 'img/galeria/1.png' %}">
+                            </a>
+                            <a href="{% static 'img/galeria/2.png' %}" data-lightbox = "models"" data-title="Descripción 2"="">
+                                <img src="{% static 'img/galeria/2.png' %}">
+                            </a>
+                            <a href="{% static 'img/galeria/3.png' %}" data-lightbox = "models"" data-title="Descripción 3"="">
+                                <img src="{% static 'img/galeria/3.png' %}">
+                            </a>
+                            <a href="{% static 'img/galeria/4.png' %}" data-lightbox = "models"" data-title="Descripción 4"="">
+                                <img src="{% static 'img/galeria/4.png' %}">
+                            </a>
+                            <a href="{% static 'img/galeria/5.png' %}" data-lightbox = "models"" data-title="Descripción 5"="">
+                                <img src="{% static 'img/galeria/5.png' %}">
+                            </a>
+                            <a href="{% static 'img/galeria/6.png' %}" data-lightbox = "models"" data-title="Descripción 6"="">
+                                <img src="{% static 'img/galeria/6.png' %}">
+                            </a>
+                            <a href="{% static 'img/galeria/7.png' %}" data-lightbox = "models"" data-title="Descripción 7"="">
+                                <img src="{% static 'img/galeria/7.png' %}">
+                            </a>
+                            <a href="{% static 'img/galeria/8.png' %}" data-lightbox = "models"" data-title="Descripción 8"="">
+                                <img src="{% static 'img/galeria/8.png' %}">
+                            </a> 
+                            <a href="{% static 'img/galeria/9.png' %}" data-lightbox = "models"" data-title="Descripción 9"="">
+                                <img src="{% static 'img/galeria/9.png' %}">
+                            </a>                          
+                        </div>
+                    </section>
+        </article>
+
+    </section>
+</main>
+
+
+{% endblock contenido %}

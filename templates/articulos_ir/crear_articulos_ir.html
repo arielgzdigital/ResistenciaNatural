@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+	
+	<div class="login-container">
+		<div class="login-card">
+			<h2>Crear Artículo</h2>
+
+			<form method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{ form.as_p }}
+
+				<button type="submit" class="btn-login">Crear</button>
+				<button type="button" onclick="window.history.back();" class="btn-cancel">Cancelar</button>
+			</form>
+		</div>
+	</div>
+	
+{% endblock contenido %}
