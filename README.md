@@ -55,4 +55,4 @@ El proyecto se encuentra publicado en la plataforma **Render**, configurado para
 - Franco César Ruiz Díaz
 - Romina Araceli Ruíz  
 
-- INFORMATORIO – COMISIÓN 4 - GRUPO 2 - Cohorte 2025
+- INFORMATORIO – COMISIÓN 4 - GRUPO 2 - Cohorte 2025 
