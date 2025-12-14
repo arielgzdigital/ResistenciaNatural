@@ -238,7 +238,6 @@ body {
 /* pie de pagina */
 .pie_de_pagina {
   width: 100%;
-  height: 400px;
   display: flex;
   padding: 20px;
   padding-top: 3rem;
