@@ -1,15 +1,12 @@
 from .base import *
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-$4-5#3mt(57ic8-q$=d3x42wud&!lrg7k=#u1jkn556cqjp(sp'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# PARA QUE FUNCIONE EN RENDER
 ALLOWED_HOSTS = [
-    'resistencianatural.onrender.com', 
-    'localhost', 
+    'resistencianatural.onrender.com',
+    'localhost',
     '127.0.0.1'
 ]
 
