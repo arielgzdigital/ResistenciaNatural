@@ -4,7 +4,7 @@ from .base import *
 SECRET_KEY = 'django-insecure-$4-5#3mt(57ic8-q$=d3x42wud&!lrg7k=#u1jkn556cqjp(sp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # PARA QUE FUNCIONE EN RENDER
 ALLOWED_HOSTS = [
